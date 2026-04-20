@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎙️ NoteMeet — Premium AI Meeting Assistant
 
-## Getting Started
+NoteMeet adalah asisten pertemuan profesional yang dirancang untuk menangkap, mentranskripsikan, dan mengelola catatan pertemuan Anda dengan antarmuka yang modern dan elegan.
 
-First, run the development server:
+![NoteMeet Banner](https://raw.githubusercontent.com/WVamoss/NoteMeet/main/public/banner.png) *(Segera tambahkan screenshot jika sudah ada)*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Fitur Unggulan
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **💎 Premium Dark UI**: Desain antarmuka modern yang futuristik, menggunakan Glassmorphism dan micro-animations.
+- **🎙️ Real-time Audio Recorder**: Rekam suara pertemuan langsung dari browser dengan visualisator yang interaktif.
+- **🤖 AI Transcription (Powered by Groq)**: Transkripsi suara ke teks secara instan menggunakan teknologi AI terbaru dari Groq (Llama-3/Whisper).
+- **📂 Smart Organization**: Kelola rekaman dan catatan Anda dalam folder yang terorganisir.
+- **🔍 Global Search**: Cari teks spesifik di dalam ribuan catatan pertemuan Anda dengan mudah.
+- **⚡ Fast & Responsive**: Dibangun dengan Next.js 15 untuk performa maksimal.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **AI Backend**: [Groq Cloud SDK](https://groq.com/)
 
-## Learn More
+## 🚀 Memulai (Get Started)
 
-To learn more about Next.js, take a look at the following resources:
+### Prasyarat
+- Node.js 18+
+- Akun Groq Cloud (untuk API Key)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Instalasi
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone repository:
+   ```bash
+   git clone https://github.com/WVamoss/NoteMeet.git
+   cd NoteMeet
+   ```
 
-## Deploy on Vercel
+2. Install dependensi:
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Konfigurasi Environment Variables:
+   Buat file `.env.local` di root direktori dan tambahkan API Key Anda:
+   ```env
+   NEXT_PUBLIC_GROQ_API_KEY=your_api_key_here
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Jalankan server pengembangan:
+   ```bash
+   npm run dev
+   ```
+
+Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
+
+## 📸 Screenshots
+
+| Dashboard | Recordings |
+|---|---|
+| ![Dashboard](https://raw.githubusercontent.com/WVamoss/NoteMeet/main/public/screenshots/dashboard.png) | ![Recordings](https://raw.githubusercontent.com/WVamoss/NoteMeet/main/public/screenshots/recordings.png) |
+
+## 📄 Lisensi
+
+Project ini dibuat oleh [WVamoss](https://github.com/WVamoss). Bebas digunakan untuk keperluan belajar!
+
+---
+*Dibuat dengan ❤️ untuk produktivitas yang lebih baik.*
