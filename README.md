@@ -54,6 +54,38 @@ NoteMeet adalah asisten pertemuan profesional yang dirancang untuk menangkap, me
 
 Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
 
+## 📖 Panduan Penggunaan (User Guide)
+
+Ikuti langkah-langkah berikut untuk menggunakan NoteMeet secara maksimal:
+
+1.  **Pengaturan AI (Wajib)**: 
+    - Klik ikon **Settings** (roda gigi) di pojok kanan atas Dashboard.
+    - Masukkan **API Key** dari [Groq](https://console.groq.com/keys) atau [OpenAI](https://platform.openai.com/api-keys).
+    - Pilih provider yang ingin Anda gunakan. AI digunakan untuk transkripsi kualitas tinggi dan pembuatan ringkasan otomatis.
+
+2.  **Membuat Catatan Baru**:
+    - Klik tombol **"New Note"** atau **"Start Recording"** di Dashboard.
+    - Tekan **"Allow"** pada prompt browser untuk memberikan akses microphone.
+    - Sesi rekaman akan dimulai dengan visualisasi suara real-time.
+
+3.  **Selama Pertemuan**:
+    - Anda bisa menjeda rekaman dengan tombol **Pause** dan melanjutkannya kembali.
+    - Transkripsi standar akan muncul secara langsung di layar saat Anda berbicara.
+
+4.  **Menyelesaikan & Memproses AI**:
+    - Klik tombol **"Finish Meeting"** untuk mengakhiri sesi.
+    - Tunggu beberapa saat selagi AI memproses audionya. NoteMeet akan melakukan transkripsi ulang menggunakan model Whisper AI untuk hasil yang jauh lebih akurat, lalu merangkum poin-poin pentingnya.
+
+5.  **Review Catatan**:
+    - Anda akan diarahkan ke halaman detail catatan.
+    - Di sini Anda bisa membaca **AI Summary**, melihat **Key Takeaways**, dan membaca **Full Transcript**.
+    - Anda juga bisa menambahkan catatan manual di editor teks yang disediakan.
+
+6.  **Manajemen Rekaman**:
+    - Klik menu **"Recordings"** di sidebar untuk melihat semua daftar pertemuan Anda.
+    - Gunakan fitur **Search** untuk mencari kata kunci di judul atau ringkasan.
+    - Anda bisa menghapus rekaman lama menggunakan ikon **Trash** pada daftar rekaman.
+
 ## 📸 Screenshots
 
 | Dashboard | Recordings |
