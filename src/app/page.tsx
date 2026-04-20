@@ -48,7 +48,7 @@ const RECENT_MEETINGS = [
 ];
 
 export default function HomePage() {
-  const { setSettingsOpen, setRecordingOpen } = useNoteStore();
+  const { setSettingsOpen, setRecordingOpen, notes } = useNoteStore();
   const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -69,7 +69,7 @@ export default function HomePage() {
             Welcome back, <span className="text-primary italic">Creative!</span>
           </h1>
           <p className="text-muted-foreground text-sm">
-            You have <span className="text-white font-medium">12 meetings</span> recorded this week.
+            You have <span className="text-white font-medium">{notes.length} meetings</span> recorded this week.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -147,7 +147,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {RECENT_MEETINGS.map((meeting, i) => (
+          {(notes.length > 0 ? notes.slice(0, 3) : RECENT_MEETINGS).map((meeting: any, i: number) => (
             <motion.div 
               key={meeting.id}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -164,10 +164,12 @@ export default function HomePage() {
                 </button>
               </div>
               
-              <h4 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors cursor-pointer">
-                {meeting.title}
-              </h4>
-              <p className="text-muted-foreground text-xs line-clamp-2 mb-6 min-h-[32px]">
+              <Link href={`/notes/${meeting.id}`}>
+                <h4 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors cursor-pointer">
+                  {meeting.title}
+                </h4>
+              </Link>
+              <p className="text-muted-foreground text-sm line-clamp-2 mb-6 min-h-[40px]">
                 {meeting.summary}
               </p>
 

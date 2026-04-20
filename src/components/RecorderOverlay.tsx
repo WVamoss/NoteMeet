@@ -24,7 +24,7 @@ interface RecorderOverlayProps {
 
 export function RecorderOverlay({ isOpen, onClose }: RecorderOverlayProps) {
   const router = useRouter();
-  const setCurrentNote = useNoteStore(state => state.setCurrentNote);
+  const addNote = useNoteStore(state => state.addNote);
   const [status, setStatus] = React.useState<"idle" | "recording" | "processing">("idle");
   const [isPaused, setIsPaused] = React.useState(false);
   const [time, setTime] = React.useState(0);
@@ -272,8 +272,9 @@ export function RecorderOverlay({ isOpen, onClose }: RecorderOverlayProps) {
     const currentAudioChunks = [...audioChunksRef.current];
     const hasAudio = currentAudioChunks.length > 0;
 
+    const noteId = Date.now().toString();
     const mockNote = {
-      id: "latest",
+      id: noteId,
       title: "Recording Session " + new Date().toLocaleTimeString(),
       date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
       duration: formatTime(time),
@@ -300,10 +301,10 @@ export function RecorderOverlay({ isOpen, onClose }: RecorderOverlayProps) {
       participants: ["User", "System Audio Capture"]
     };
 
-    setCurrentNote(mockNote);
+    addNote(mockNote);
     setTimeout(() => {
       onClose();
-      router.push("/notes/latest");
+      router.push(`/notes/${noteId}`);
     }, 2500);
   };
 

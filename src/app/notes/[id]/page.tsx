@@ -38,7 +38,7 @@ const MOCK_NOTE = {
 
 export default function NoteDetailPage() {
   const params = useParams();
-  const currentNote = useNoteStore(state => state.currentNote);
+  const { notes } = useNoteStore();
   const [activeTab, setActiveTab] = React.useState<"summary" | "transcript">("summary");
   const [isMounted, setIsMounted] = React.useState(false);
 
@@ -47,7 +47,7 @@ export default function NoteDetailPage() {
   }, []);
 
   // Use real data if available, otherwise mock
-  const noteData = (params.id === "latest" && currentNote) ? currentNote : MOCK_NOTE;
+  const noteData = notes.find(n => n.id === params.id) || MOCK_NOTE;
 
   if (!isMounted) return <div className="min-h-screen bg-[#09090b]" />;
 

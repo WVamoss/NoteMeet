@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useNoteStore } from "@/lib/store";
+import { Trash2 } from "lucide-react";
 
 const ALL_RECORDINGS = [
   {
@@ -59,6 +61,7 @@ const ALL_RECORDINGS = [
 ];
 
 export default function RecordingsPage() {
+  const { notes, deleteNote } = useNoteStore();
   const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -97,7 +100,7 @@ export default function RecordingsPage() {
 
       {/* Grid */}
       <div className="grid grid-cols-1 gap-4">
-        {ALL_RECORDINGS.map((recording, i) => (
+        {(notes.length > 0 ? notes : ALL_RECORDINGS).map((recording: any, i: number) => (
           <motion.div 
             key={recording.id}
             initial={{ opacity: 0, y: 10 }}
@@ -152,6 +155,18 @@ export default function RecordingsPage() {
                >
                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-0.5 transition-transform" />
                </Link>
+               {notes.length > 0 && (
+                 <button 
+                  onClick={() => {
+                    if(confirm("Are you sure you want to delete this recording?")) {
+                      deleteNote(recording.id);
+                    }
+                  }}
+                  className="p-3 hover:bg-red-500/20 hover:text-red-500 rounded-xl text-muted-foreground transition-all"
+                 >
+                   <Trash2 className="w-5 h-5" />
+                 </button>
+               )}
                <button className="p-3 hover:bg-white/5 rounded-xl text-muted-foreground transition-all">
                  <MoreVertical className="w-5 h-5" />
                </button>
