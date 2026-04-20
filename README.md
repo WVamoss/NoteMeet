@@ -2,7 +2,7 @@
 
 NoteMeet adalah asisten pertemuan profesional yang dirancang untuk menangkap, mentranskripsikan, dan mengelola catatan pertemuan Anda dengan antarmuka yang modern dan elegan.
 
-![NoteMeet Banner](https://raw.githubusercontent.com/WVamoss/NoteMeet/main/public/banner.png) *(Segera tambahkan screenshot jika sudah ada)*
+![NoteMeet Banner](https://raw.githubusercontent.com/WVamoss/NoteMeet/main/public/banner.png)
 
 ## ✨ Fitur Unggulan
 
